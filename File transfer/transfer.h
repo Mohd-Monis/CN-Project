@@ -58,7 +58,6 @@ void receiveFile(SOCKET socket, string filepath){
     int bytes_received = 0;
     
     while((bytes_received = recv(socket,buffer,blocksize,0)) > 0){
-        cout<<"received bits are: "<<buffer<<endl;
         file.write(buffer,bytes_received);
     }
 }
