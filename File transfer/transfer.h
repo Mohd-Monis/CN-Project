@@ -38,11 +38,11 @@ void sendFile(SOCKET socket, string filepath){
         file.read(buffer,blocksize);
         int size;
         while((size = file.gcount())){
-            cout<<"size read is : "<<size<<endl;
+            // cout<<"size read is : "<<size<<endl;
             int sent = 0;
             while(sent < size){
                 int bytes = send(socket, buffer + sent,size - sent,0);
-                cout<<"num bytes sent "<<bytes<<endl;
+                // cout<<"num bytes sent "<<bytes<<endl;
                 sent += bytes;
             }
             file.read(buffer,blocksize);
